@@ -7,7 +7,7 @@ domain adaptation algorithms. Specifically, we consider a unsupervised domain
 adaptation (UDA) setting: given a labeled dataset from a source domain and
 an unlabeled dataset from a (related) target domain, the goal is to train a
 classifier that is robust against adversarial attacks on the target domain.
-The implementation builds on [DomainBed](https://github.com/facebookresearch/DomainBed), AutoAttack(https://github.com/fra31/auto-attack), and CleverHans(https://github.com/cleverhans-lab/cleverhans).
+The implementation builds on [DomainBed](https://github.com/facebookresearch/DomainBed), [AutoAttack](https://github.com/fra31/auto-attack), and [CleverHans](https://github.com/cleverhans-lab/cleverhans).
 
 ## Available algorithms
 
