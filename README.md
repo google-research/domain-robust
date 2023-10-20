@@ -11,9 +11,9 @@ The implementation builds on [DomainBed](https://github.com/facebookresearch/Dom
 
 ## Available algorithms
 
-The [currently available algorithms](domainbed/algorithms.py) are:
+The following [algorithms](domainrobust/algorithms.py) are currently available:
 
-* Empirical Risk Minimization (ERM, [Vapnik, 1998](https://www.wiley.com/en-fr/Statistical+Learning+Theory-p-9780471030034)): standard ERM without adversarial training.
+* Empirical Risk Minimization (ERM): standard ERM without adversarial training.
 * Domain Adversarial Neural Network (DANN, [Ganin et al., 2015](https://arxiv.org/abs/1505.07818)): standard DANN without adversarial training.
 * Adversarial Training (AT, [Madry et al., 2017](https://arxiv.org/abs/1706.06083)). Three variants are supported: (i) AT only on the labeled source data, (ii) AT on pseudo-labeled target data (where pseudo labels are obtained a-priori using DANN), and (iii) AT on the source data along with a DANN regularizer. See our paper for details.
 * TRadeoff-inspired Adversarial DEfense via Surrogate-loss minimization (TRADES, [Zhang et al., 2019](https://arxiv.org/abs/1901.08573)). Two variants are supported: (i) TRADES only on the labeled source data, and (ii) TRADES on pseudo-labeled target data (where pseudo labels are obtained a-priori using DANN). See our paper for details.
