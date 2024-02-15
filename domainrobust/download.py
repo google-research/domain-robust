@@ -54,10 +54,6 @@ def download_digit(data_dir):
     download_and_extract("https://drive.google.com/uc?id=1wnY5M74Zj-lPuOQzcmVO9KQVLVhgK7Vu",
                          os.path.join(data_dir, "DIGIT.zip"))
 
-    os.rename(os.path.join(data_dir, "kfold"),
-              full_path)
-
-
 
 # PACS ########################################################################
 
@@ -94,8 +90,6 @@ def download_visda(data_dir):
     download_and_extract("https://drive.google.com/uc?id=1VrIlU6yrm-XTcwfpRIWuALdTAYulgdYp",
                          os.path.join(data_dir, "VISDA.zip"))
 
-    os.rename(os.path.join(data_dir, "kfold"),
-              full_path)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Download datasets')
