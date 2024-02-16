@@ -39,6 +39,19 @@ python3 -m domainrobust.download \
        --data_dir=./domainrobust/data
 ```
 
+We first generate a pretrained model using DANN (this pretrained model will be used by algorithms like SROUDA and DART):
+
+```sh
+python3 -m domainrobust.scripts.train\
+       --data_dir=/my/datasets/path\
+       --output_dir=/my/pretrained/model/path\
+       --algorithm DANN\
+       --dataset DIGIT\
+       --task domain_adaptation\
+       --source_envs 0\
+       --target_envs 2
+```
+
 To train a single model:
 
 ```sh
@@ -86,19 +99,6 @@ python -m domainrobust.scripts.sweep launch\
 Here, `MyLauncher` has three options as implemented in `command_launchers.py`: local, dummy, multi_gpu. The command above trains multiple models for a number of randomly sampled hyperparameter sets (specified using `n_hparams`). For each model (defined by a particular choice of an algorithm, a dataset, and a hyperparameter set), an output directory is automatically created. When the training process is complete, an empty file named Done is created in the directory. Moreover, the directory will be populated with checkpoints of the best models based on clean/robust source/target validation set accuracy, in addition to a training log.
 
 Once all jobs have reached either a successful or failed state, you can proceed to remove the records associated with the failed jobs using the command ``python -m domainrobust.scripts.sweep delete_incomplete``, so that the folders associated with the incomplete jobs can be deleted, otherwise other sweep will not launch the job with the same hyperparameters. After deleting the incomplete jobs, you can re-launch them by executing ``python -m domainrobust.scripts.sweep launch``. Please ensure that you provide the same command-line arguments when you re-launch as you did during the initial launch.
-
-For specific algorithms (e.g. SROUDA, DART) that requires pretrained models, it can be generated via algorithm DANN:
-
-```sh
-python3 -m domainrobust.scripts.train\
-       --data_dir=/my/datasets/path\
-       --output_dir=/my/pretrained/model/path\
-       --algorithm DANN\
-       --dataset DIGIT\
-       --task domain_adaptation\
-       --source_envs 0\
-       --target_envs 2
-```
 
 To collect the results from all folders:
 
