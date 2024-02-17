@@ -33,11 +33,31 @@ DomainRobust includes the following datasets:
 
 ## Quick start
 
+To download the datasets:
+```sh
+python3 -m domainrobust.download \
+       --data_dir=./domainrobust/data
+```
+
+We first generate a pretrained model using DANN (this pretrained model will be used by algorithms like SROUDA and DART):
+
+```sh
+python3 -m domainrobust.scripts.train\
+       --data_dir=/my/datasets/path\
+       --output_dir=/my/pretrained/model/path\
+       --algorithm DANN\
+       --dataset DIGIT\
+       --task domain_adaptation\
+       --source_envs 0\
+       --target_envs 2
+```
+
 To train a single model:
 
 ```sh
-python3 -m scripts.train\
+python3 -m domainrobust.scripts.train\
        --data_dir=/my/datasets/path\
+       --output_dir=/output/path\
        --algorithm AT\
        --dataset DIGIT\
        --task domain_adaptation\
@@ -55,7 +75,7 @@ python3 -m scripts.train\
 To launch a sweep (over a range of hyperparameters and possibly multiple algorithms and datasets):
 
 ```sh
-python -m scripts.sweep launch\
+python -m domainrobust.scripts.sweep launch\
        --data_dir=/my/datasets/path\
        --output_dir=/my/sweep/output/path\
        --command_launcher MyLauncher\
