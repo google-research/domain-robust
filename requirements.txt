@@ -4,7 +4,7 @@ imageio==2.31.2
 gdown==4.7.3
 torchvision==0.14.1
 torch==1.13.1
-tqdm==4.66.2
+tqdm==4.66.3
 backpack==0.1
 parameterized==0.8.1
 Pillow==8.3.2
