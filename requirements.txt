@@ -1,7 +1,7 @@
 numpy==1.21.6
 wilds==1.2.2
 imageio==2.31.2
-gdown==4.7.3
+gdown==5.2.2
 torchvision==0.14.1
 torch==1.13.1
 tqdm==4.66.2
